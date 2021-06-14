@@ -1,0 +1,22 @@
+.shopping-course
+{
+    color: red;
+}
+
+#log {
+    margin-left: 75%;
+}
+
+#nam {
+    margin-left: 70%;
+}
+
+@media screen and (max-width: 780px) {
+    #log {
+        margin-left: 0;
+    }
+
+    #nam {
+        margin-left: 0;
+    }
+}

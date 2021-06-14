@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+            <mat-icon  >menu</mat-icon>
+        </button>
+        <a mat-button [routerLink]="'/'" >Home</a>
+        <a mat-button [routerLink]="'/courses'">Menu</a>
+        <a mat-button [routerLink]="'/about'">About</a>
+        <!-- <a mat-button *ngIf="!user"  [routerLink]="'/login'" style="margin-left: 75%;">Login</a> -->
+        <a mat-button *ngIf="!user"  (click)='onLogin()' id = "log">Login</a>
+        <a mat-button  *ngIf="user" [matMenuTriggerFor]="Menu" id = "nam">{{user.name}}</a>
+        <mat-menu #Menu="matMenu" >
+            <button mat-menu-item [routerLink]="'/orders'">Orders</button>
+            <button mat-menu-item *ngIf="user && user.isAdmin" [routerLink]="'/admin-courses'" >Admin</button>
+            <button mat-menu-item>Score: 0</button>
+            <button mat-menu-item (click)="logout()">Logout</button>
+        </mat-menu>
+
+        <a mat-button (click)="recapShopping()"><span class='shopping-course'>{{nbrShoppingCourse}}</span>  <i class="material-icons"> add_shopping_cart</i></a>
+    
+    </mat-toolbar-row>
+</mat-toolbar>
+
